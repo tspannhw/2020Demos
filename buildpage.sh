@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo '<html><head><meta http-equiv="refresh" content="60"> <title>NiFi List Images</title>'
+echo '<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script></head>'
+echo '<body> <p> <br> <b>List Images</b> <br><br>'
+sed 's/^.*/<a target="_new" href="http:\/\/Tspann-MBP15-HW14277:9099\?img_name\=&"><img border="0" alt="&" src="http:\/\/Tspann-MBP15-HW14277:9099\?img_name\=&"><\/a><br\/><br\/>/'
+echo '<br><br>'
+echo '<div class="kafkarestdata"></div>'
+echo '<script> $.getJSON("http://Tspann-MBP15-HW14277:9669?topic=bme680", function(data) {'
+echo ' var text = ` ${data.date}<br>`'
+echo ' $("kafkarestdata").html(text); '
+echo '}); '
+echo '</script>'
+echo '<br><br>'
+echo '<b>&copy; 2020 Tim Spann - https://<a href="https://datainmotion.dev/">datainmotion.dev/</a>'
+echo '</body></html>'
